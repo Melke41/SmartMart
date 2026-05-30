@@ -14,7 +14,7 @@ public class PasswordUtil {
             byte[] hashedBytes = md.digest(plainText.getBytes());
             StringBuilder sb = new StringBuilder();
             for (byte b : hashedBytes) {
-                sb.append(String.format("%02x", b));
+                sb.append(String.format("%02x", b & 0xFF));
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {

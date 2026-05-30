@@ -68,16 +68,32 @@ public class UserDAO {
         String query = "INSERT INTO users (username, password, role, full_name, is_active) VALUES (?, ?, ?, ?, ?)";
         Connection conn = DatabaseConnection.getInstance();
         PreparedStatement ps = null;
+        ResultSet rsKeys = null;
         try {
-            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getUsername());
-            ps.setString(2, PasswordUtil.hashPassword(user.getPassword()));
+            
+            String password = user.getPassword();
+            if (password != null && password.length() != 64) {
+                password = PasswordUtil.hashPassword(password);
+            }
+            ps.setString(2, password);
             ps.setString(3, user.getRole().name());
             ps.setString(4, user.getFullName());
             ps.setInt(5, user.isActive() ? 1 : 0);
             int rows = ps.executeUpdate();
+            
+            if (rows > 0) {
+                rsKeys = ps.getGeneratedKeys();
+                if (rsKeys.next()) {
+                    user.setUserId(rsKeys.getInt(1));
+                }
+            }
             return rows > 0;
         } finally {
+            if (rsKeys != null) {
+                rsKeys.close();
+            }
             if (ps != null) {
                 ps.close();
             }

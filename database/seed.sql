@@ -1,9 +1,9 @@
--- USERS (passwords are plain text for now, we will hash later)
+-- USERS (passwords are SHA-256 hashed)
 INSERT INTO users (username, password, role, full_name) VALUES
-('admin',   'admin123',   'ADMIN',   'Solomon Haile'),
-('manager', 'manager123', 'MANAGER', 'Tigist Bekele'),
-('cashier1','cashier123', 'CASHIER', 'Dawit Alemu'),
-('cashier2','cashier456', 'CASHIER', 'Hanan Yusuf');
+('admin',   '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9',   'ADMIN',   'Solomon Haile'),
+('manager', '866485796cfa8d7c0cf7111640205b83076433547577511d81f8030ae99ecea5', 'MANAGER', 'Tigist Bekele'),
+('cashier1','b4c94003c562bb0d89535eca77f07284fe560fd48a7cc1ed99f0a56263d616ba', 'CASHIER', 'Dawit Alemu'),
+('cashier2','cd821f965c2dbf9fd07ee140a65b0cb9d313fe9c6622fc3868d29d0824f8b9ff', 'CASHIER', 'Hanan Yusuf');
 
 -- CATEGORIES
 INSERT INTO categories (category_name) VALUES
