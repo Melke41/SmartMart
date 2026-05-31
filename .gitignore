@@ -1,5 +1,23 @@
-.idea/
+# Compiled files
 *.class
 out/
+
+# Database
 *.db
+*.db-shm
+*.db-wal
+
+# IDE files
+.idea/
 *.iml
+.vscode/
+*.project
+*.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep these
+!docs/screenshots/
+!docs/*.txt

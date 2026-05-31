@@ -97,7 +97,7 @@ public class ReceiptDialog extends JDialog {
 
         sb.append("================================\n");
         sb.append(String.format("Receipt No: REC-%04d\n", sale.getSaleId()));
-        sb.append("Date & Time: ").append(sdf.format(sale.getSaleDate())).append("\n");
+        sb.append("Date & Time: ").append(sale.getSaleDate()).append("\n");
         sb.append("Cashier: ").append(sale.getCashier().getFullName()).append("\n");
         sb.append("================================\n");
         
