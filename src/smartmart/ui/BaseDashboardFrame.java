@@ -207,39 +207,31 @@ public abstract class BaseDashboardFrame extends JFrame {
         teamTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel team1 = new JLabel("1. Melkamu Abyot");
-        team1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        team1.setFont(new Font("Segoe UI", Font.BOLD, 14));
         team1.setForeground(UIConstants.TEXT_PRIMARY);
         team1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel role1 = new JLabel("Lead Developer");
+        role1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        role1.setForeground(UIConstants.TEXT_SECONDARY);
+        role1.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JLabel team2 = new JLabel("2. Samuel Alemayehu");
-        team2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        team2.setFont(new Font("Segoe UI", Font.BOLD, 14));
         team2.setForeground(UIConstants.TEXT_PRIMARY);
         team2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel role2 = new JLabel("Backend Developer");
+        role2.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        role2.setForeground(UIConstants.TEXT_SECONDARY);
+        role2.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JLabel team3 = new JLabel("3. Mengistu Tark");
-        team3.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        team3.setFont(new Font("Segoe UI", Font.BOLD, 14));
         team3.setForeground(UIConstants.TEXT_PRIMARY);
         team3.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel team4 = new JLabel("4. [Member 4 name]");
-        team4.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        team4.setForeground(UIConstants.TEXT_PRIMARY);
-        team4.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel team5 = new JLabel("5. [Member 5 name]");
-        team5.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        team5.setForeground(UIConstants.TEXT_PRIMARY);
-        team5.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel team6 = new JLabel("6. [Member 6 name]");
-        team6.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        team6.setForeground(UIConstants.TEXT_PRIMARY);
-        team6.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel team7 = new JLabel("7. [Member 7 name]");
-        team7.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        team7.setForeground(UIConstants.TEXT_PRIMARY);
-        team7.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel role3 = new JLabel("UI Developer");
+        role3.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        role3.setForeground(UIConstants.TEXT_SECONDARY);
+        role3.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         panel.add(title);
         panel.add(version);
@@ -247,12 +239,13 @@ public abstract class BaseDashboardFrame extends JFrame {
         panel.add(teamTitle);
         panel.add(Box.createRigidArea(new Dimension(0, 5)));
         panel.add(team1);
+        panel.add(role1);
+        panel.add(Box.createRigidArea(new Dimension(0, 8)));
         panel.add(team2);
+        panel.add(role2);
+        panel.add(Box.createRigidArea(new Dimension(0, 8)));
         panel.add(team3);
-        panel.add(team4);
-        panel.add(team5);
-        panel.add(team6);
-        panel.add(team7);
+        panel.add(role3);
 
         JOptionPane.showMessageDialog(this, panel, "About SmartMart", JOptionPane.INFORMATION_MESSAGE);
     }

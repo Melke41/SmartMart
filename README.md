@@ -168,15 +168,12 @@ java -cp "out;lib/sqlite-jdbc-3.45.1.0.jar" smartmart.ui.MainApp
 ---
 
 ## 👥 Team Members
-| # | Name |
-|---|---|
-| 1 | Melkamu Abyot |
-| 2 | Samuel Alemayehu |
-| 3 | Mengistu Tark |
-| 4 | [Member 4] |
-| 5 | [Member 5] |
-| 6 | [Member 6] |
-| 7 | [Member 7] |
+
+| # | Name | Role |
+|---|---|---|
+| 1 | Melkamu Abyot | Lead Developer |
+| 2 | Samuel Alemayehu | Backend Developer |
+| 3 | Mengistu Tark | UI Developer |
 
 ---
 
