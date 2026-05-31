@@ -134,6 +134,34 @@ public class SaleDAO {
         return list;
     }
 
+    public List<Sale> getSalesByDateRange(String startDate, String endDate) throws SQLException {
+        List<Sale> list = new ArrayList<>();
+        String query = "SELECT s.*, u.username, u.password, u.role, u.full_name AS cashier_fullname, u.is_active " +
+                       "FROM sales s " +
+                       "JOIN users u ON s.cashier_id = u.user_id " +
+                       "WHERE date(s.sale_date) BETWEEN ? AND ?";
+        Connection conn = DatabaseConnection.getInstance();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setString(1, startDate);
+            ps.setString(2, endDate);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapSale(rs, conn));
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+        }
+        return list;
+    }
+
     public List<Sale> getSalesByCashier(int cashierId) throws SQLException {
         List<Sale> list = new ArrayList<>();
         String query = "SELECT s.*, u.username, u.password, u.role, u.full_name AS cashier_fullname, u.is_active " +

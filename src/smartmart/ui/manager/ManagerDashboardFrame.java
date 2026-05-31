@@ -33,25 +33,23 @@ public class ManagerDashboardFrame extends BaseDashboardFrame {
         }
 
         sidebarPanel.add(Box.createVerticalGlue());
+
+        // Add manager name label
+        JLabel lblManager = new JLabel("Manager: " + currentUser.getFullName());
+        lblManager.setFont(UIConstants.FONT_SMALL);
+        lblManager.setForeground(Color.WHITE);
+        lblManager.setBorder(BorderFactory.createEmptyBorder(10, 15, 15, 15));
+        lblManager.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sidebarPanel.add(lblManager);
     }
 
     @Override
     protected void initModules() {
-        String[] modules = {
-            "Dashboard", "Sales Report", "Inventory Report", "EOD Report", "Low Stock Alerts"
-        };
-
-        for (String mod : modules) {
-            JPanel panel = new JPanel(new GridBagLayout());
-            panel.setBackground(Color.WHITE);
-            
-            JLabel lblPlaceholder = new JLabel(mod + " — Coming in Phase 8");
-            lblPlaceholder.setFont(UIConstants.FONT_TITLE);
-            lblPlaceholder.setForeground(UIConstants.TEXT_SECONDARY);
-            
-            panel.add(lblPlaceholder);
-            contentPanel.add(panel, mod);
-        }
+        contentPanel.add(new ManagerOverviewPanel(), "Dashboard");
+        contentPanel.add(new SalesReportPanel(), "Sales Report");
+        contentPanel.add(new InventoryReportPanel(), "Inventory Report");
+        contentPanel.add(new EODReportPanel(), "EOD Report");
+        contentPanel.add(new LowStockAlertsPanel(), "Low Stock Alerts");
 
         // Display Dashboard module by default
         showModule("Dashboard");

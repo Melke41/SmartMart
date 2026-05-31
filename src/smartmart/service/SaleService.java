@@ -90,6 +90,14 @@ public class SaleService {
         }
     }
 
+    public List<Sale> getSalesByDateRange(String startDate, String endDate) throws SmartMartException {
+        try {
+            return saleDAO.getSalesByDateRange(startDate, endDate);
+        } catch (SQLException e) {
+            throw new SmartMartException("Database error retrieving sales by date range: " + e.getMessage(), e);
+        }
+    }
+
     public List<Sale> getSalesByCashier(int cashierId) throws SmartMartException {
         try {
             return saleDAO.getSalesByCashier(cashierId);

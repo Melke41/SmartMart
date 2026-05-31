@@ -63,6 +63,37 @@ public class AlertDAO {
         return list;
     }
 
+    public List<Alert> getAllAlerts() throws SQLException {
+        List<Alert> list = new ArrayList<>();
+        String query = "SELECT a.*, " +
+                       "p.product_name, p.price, p.stock_qty, p.low_stock_limit, p.category_id, p.supplier_id, " +
+                       "c.category_name, " +
+                       "s.name AS supplier_name, s.contact_phone AS supplier_phone, s.email AS supplier_email, s.address AS supplier_address " +
+                       "FROM alerts a " +
+                       "JOIN products p ON a.product_id = p.product_id " +
+                       "JOIN categories c ON p.category_id = c.category_id " +
+                       "JOIN suppliers s ON p.supplier_id = s.supplier_id " +
+                       "ORDER BY a.is_resolved ASC, a.created_at DESC";
+        Connection conn = DatabaseConnection.getInstance();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapAlert(rs));
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+        }
+        return list;
+    }
+
     public boolean resolveAlert(int alertId) throws SQLException {
         String query = "UPDATE alerts SET is_resolved = 1 WHERE alert_id = ?";
         Connection conn = DatabaseConnection.getInstance();
