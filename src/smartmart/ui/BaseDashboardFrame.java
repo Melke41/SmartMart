@@ -193,7 +193,7 @@ public abstract class BaseDashboardFrame extends JFrame {
         title.setForeground(UIConstants.PRIMARY_COLOR);
         title.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel version = new JLabel("Version: " + UIConstants.APP_VERSION);
+        JLabel version = new JLabel("Version: v1.0");
         version.setFont(UIConstants.FONT_BODY);
         version.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -203,35 +203,29 @@ public abstract class BaseDashboardFrame extends JFrame {
         desc.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel teamTitle = new JLabel("Development Team:");
-        teamTitle.setFont(UIConstants.FONT_SUBTITLE);
+        teamTitle.setFont(new Font("Segoe UI", Font.BOLD, 14));
         teamTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel team1 = new JLabel("1. Melkamu Abyot");
-        team1.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        team1.setForeground(UIConstants.TEXT_PRIMARY);
-        team1.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel role1 = new JLabel("Lead Developer");
-        role1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        role1.setForeground(UIConstants.TEXT_SECONDARY);
-        role1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel team1 = new JLabel("- Melkamu Abyot (Lead Developer)");
+        team1.setFont(UIConstants.FONT_BODY);
+        team1.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel team2 = new JLabel("2. Samuel Alemayehu");
-        team2.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        team2.setForeground(UIConstants.TEXT_PRIMARY);
-        team2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel role2 = new JLabel("Backend Developer");
-        role2.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        role2.setForeground(UIConstants.TEXT_SECONDARY);
-        role2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel team2 = new JLabel("- Samuel Alemayehu (Backend Developer)");
+        team2.setFont(UIConstants.FONT_BODY);
+        team2.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel team3 = new JLabel("3. Mengistu Tark");
-        team3.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        team3.setForeground(UIConstants.TEXT_PRIMARY);
-        team3.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel role3 = new JLabel("UI Developer");
-        role3.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        role3.setForeground(UIConstants.TEXT_SECONDARY);
-        role3.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel team3 = new JLabel("- Mengistu Tark (UI Developer)");
+        team3.setFont(UIConstants.FONT_BODY);
+        team3.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel courseInfo = new JLabel("Object Oriented Programming \u2014 CoSc2051");
+        courseInfo.setFont(UIConstants.FONT_BODY);
+        courseInfo.setBorder(BorderFactory.createEmptyBorder(15, 0, 0, 0));
+        courseInfo.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel institution = new JLabel("Addis Ababa University, 2025");
+        institution.setFont(UIConstants.FONT_BODY);
+        institution.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         panel.add(title);
         panel.add(version);
@@ -239,13 +233,10 @@ public abstract class BaseDashboardFrame extends JFrame {
         panel.add(teamTitle);
         panel.add(Box.createRigidArea(new Dimension(0, 5)));
         panel.add(team1);
-        panel.add(role1);
-        panel.add(Box.createRigidArea(new Dimension(0, 8)));
         panel.add(team2);
-        panel.add(role2);
-        panel.add(Box.createRigidArea(new Dimension(0, 8)));
         panel.add(team3);
-        panel.add(role3);
+        panel.add(courseInfo);
+        panel.add(institution);
 
         JOptionPane.showMessageDialog(this, panel, "About SmartMart", JOptionPane.INFORMATION_MESSAGE);
     }
