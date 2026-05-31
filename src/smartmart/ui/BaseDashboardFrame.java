@@ -60,7 +60,13 @@ public abstract class BaseDashboardFrame extends JFrame {
         lblUserInfo.setFont(UIConstants.FONT_BODY);
         lblUserInfo.setForeground(UIConstants.TEXT_PRIMARY);
 
-        JButton btnLogout = UIHelper.createSecondaryButton("Logout");
+        JButton btnLogout = new JButton("Logout");
+        btnLogout.setBackground(UIConstants.DANGER_COLOR);
+        btnLogout.setForeground(Color.WHITE);
+        btnLogout.setOpaque(true);
+        btnLogout.setContentAreaFilled(true);
+        btnLogout.setBorderPainted(false);
+        btnLogout.setFocusPainted(false);
         btnLogout.setPreferredSize(new Dimension(90, 30));
         btnLogout.addActionListener(new ActionListener() {
             @Override
@@ -140,10 +146,10 @@ public abstract class BaseDashboardFrame extends JFrame {
         
         // Add padding & layout constraints
         button.setBorder(BorderFactory.createEmptyBorder(12, 20, 12, 20));
-        button.setMaximumSize(new Dimension(UIConstants.SIDEBAR_WIDTH, 45));
+        button.setPreferredSize(new Dimension(UIConstants.SIDEBAR_WIDTH, 45));
 
         // Slightly lighter blue hover effect
-        Color hoverColor = new Color(30, 130, 230);
+        Color hoverColor = new Color(0, 80, 160);
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {

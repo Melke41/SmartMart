@@ -456,6 +456,7 @@ public class POSPanel extends JPanel {
             setBackground(UIConstants.DANGER_COLOR);
             setFont(new Font("SansSerif", Font.BOLD, 12));
             setFocusPainted(false);
+            setBorderPainted(false);
             setBorder(BorderFactory.createEmptyBorder(2, 5, 2, 5));
         }
 
@@ -482,6 +483,7 @@ public class POSPanel extends JPanel {
             button.setBackground(UIConstants.DANGER_COLOR);
             button.setFont(new Font("SansSerif", Font.BOLD, 12));
             button.setFocusPainted(false);
+            button.setBorderPainted(false);
             button.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     fireEditingStopped();

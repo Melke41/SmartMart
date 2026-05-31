@@ -17,15 +17,17 @@ public class UIHelper {
         button.setBackground(UIConstants.PRIMARY_COLOR);
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
         button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
         button.setPreferredSize(new Dimension(button.getPreferredSize().width, UIConstants.BUTTON_HEIGHT));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
-        // Add subtle hover effect
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                button.setBackground(UIConstants.PRIMARY_COLOR.brighter());
+                button.setBackground(new Color(0, 80, 160));
             }
 
             @Override
@@ -39,9 +41,12 @@ public class UIHelper {
     public static JButton createDangerButton(String text) {
         JButton button = new JButton(text);
         button.setFont(UIConstants.FONT_BUTTON);
-        button.setBackground(UIConstants.DANGER_COLOR);
+        button.setBackground(new Color(204, 0, 0));
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
         button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
         button.setPreferredSize(new Dimension(button.getPreferredSize().width, UIConstants.BUTTON_HEIGHT));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -49,12 +54,12 @@ public class UIHelper {
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                button.setBackground(UIConstants.DANGER_COLOR.brighter());
+                button.setBackground(new Color(170, 0, 0));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                button.setBackground(UIConstants.DANGER_COLOR);
+                button.setBackground(new Color(204, 0, 0));
             }
         });
         return button;
@@ -63,9 +68,12 @@ public class UIHelper {
     public static JButton createSuccessButton(String text) {
         JButton button = new JButton(text);
         button.setFont(UIConstants.FONT_BUTTON);
-        button.setBackground(UIConstants.SECONDARY_COLOR); // green background
+        button.setBackground(new Color(0, 153, 76));
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
         button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
         button.setPreferredSize(new Dimension(button.getPreferredSize().width, UIConstants.BUTTON_HEIGHT));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -73,12 +81,12 @@ public class UIHelper {
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                button.setBackground(UIConstants.SECONDARY_COLOR.brighter());
+                button.setBackground(new Color(0, 120, 60));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                button.setBackground(UIConstants.SECONDARY_COLOR);
+                button.setBackground(new Color(0, 153, 76));
             }
         });
         return button;
@@ -87,9 +95,12 @@ public class UIHelper {
     public static JButton createSecondaryButton(String text) {
         JButton button = new JButton(text);
         button.setFont(UIConstants.FONT_BUTTON);
-        button.setBackground(new Color(220, 220, 225)); // grey background
-        button.setForeground(UIConstants.TEXT_PRIMARY); // dark text
+        button.setBackground(new Color(108, 117, 125));
+        button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
         button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
         button.setPreferredSize(new Dimension(button.getPreferredSize().width, UIConstants.BUTTON_HEIGHT));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -97,12 +108,12 @@ public class UIHelper {
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                button.setBackground(new Color(200, 200, 205));
+                button.setBackground(new Color(80, 90, 100));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                button.setBackground(new Color(220, 220, 225));
+                button.setBackground(new Color(108, 117, 125));
             }
         });
         return button;

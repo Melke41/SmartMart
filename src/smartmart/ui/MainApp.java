@@ -17,11 +17,12 @@ public class MainApp {
         }
         System.out.println("Database connection verified successfully.");
 
-        // 2. Set Native Look and Feel
+        // 2. Set Cross-Platform Look and Feel (Metal)
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception e) {
-            System.err.println("Warning: Failed to set native system Look & Feel. Falling back to default.");
+            System.err.println("Warning: Failed to set cross-platform Look & Feel. Falling back to default.");
+            e.printStackTrace();
         }
 
         // 3. Launch Login Screen on the Event Dispatch Thread (EDT)

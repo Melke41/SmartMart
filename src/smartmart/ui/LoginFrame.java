@@ -112,6 +112,14 @@ public class LoginFrame extends JFrame {
         txtPassword.setMaximumSize(new Dimension(Integer.MAX_VALUE, UIConstants.FORM_FIELD_HEIGHT));
 
         btnLogin = UIHelper.createPrimaryButton("Login");
+        btnLogin.setBackground(UIConstants.PRIMARY_COLOR);
+        btnLogin.setForeground(Color.WHITE);
+        btnLogin.setOpaque(true);
+        btnLogin.setContentAreaFilled(true);
+        btnLogin.setBorderPainted(false);
+        btnLogin.setFocusPainted(false);
+        btnLogin.setFont(UIConstants.FONT_BUTTON);
+        btnLogin.setPreferredSize(new Dimension(300, 42));
         btnLogin.setAlignmentX(Component.LEFT_ALIGNMENT);
         btnLogin.setMaximumSize(new Dimension(Integer.MAX_VALUE, UIConstants.BUTTON_HEIGHT));
 
