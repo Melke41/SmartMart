@@ -1,0 +1,7 @@
+=========================================
+             SALES REPORT                
+Date: 2026-05-01
+=========================================
+No sales transactions found for this date.
+Total Revenue for Date: 0.00
+=========================================

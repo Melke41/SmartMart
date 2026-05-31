@@ -1,9 +1,9 @@
 -- USERS (passwords are SHA-256 hashed)
 INSERT INTO users (username, password, role, full_name) VALUES
-('admin',   '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9',   'ADMIN',   'Solomon Haile'),
-('manager', '866485796cfa8d7c0cf7111640205b83076433547577511d81f8030ae99ecea5', 'MANAGER', 'Tigist Bekele'),
-('cashier1','b4c94003c562bb0d89535eca77f07284fe560fd48a7cc1ed99f0a56263d616ba', 'CASHIER', 'Dawit Alemu'),
-('cashier2','cd821f965c2dbf9fd07ee140a65b0cb9d313fe9c6622fc3868d29d0824f8b9ff', 'CASHIER', 'Hanan Yusuf');
+('admin',   '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9',   'ADMIN',   'Melkamu Abyot'),
+('manager', '866485796cfa8d7c0cf7111640205b83076433547577511d81f8030ae99ecea5', 'MANAGER', 'Samuel Alemayehu'),
+('cashier1','b4c94003c562bb0d89535eca77f07284fe560fd48a7cc1ed99f0a56263d616ba', 'CASHIER', 'Mengistu Tark'),
+('cashier2','cd821f965c2dbf9fd07ee140a65b0cb9d313fe9c6622fc3868d29d0824f8b9ff', 'CASHIER', 'Cashier Two');
 
 -- CATEGORIES
 INSERT INTO categories (category_name) VALUES
@@ -30,7 +30,7 @@ INSERT INTO products (product_name, category_id, supplier_id, price, stock_qty, 
 
 -- EMPLOYEES
 INSERT INTO employees (user_id, full_name, phone, salary, hire_date) VALUES
-(1, 'Solomon Haile', '0911111111', 15000.00, '2022-01-15'),
-(2, 'Tigist Bekele', '0922222222', 12000.00, '2022-03-10'),
-(3, 'Dawit Alemu',   '0933333333',  8000.00, '2023-06-01'),
-(4, 'Hanan Yusuf',   '0944444444',  8000.00, '2023-08-20');
+(1, 'Melkamu Abyot', '0911111111', 15000.00, '2022-01-15'),
+(2, 'Samuel Alemayehu', '0922222222', 12000.00, '2022-03-10'),
+(3, 'Mengistu Tark',   '0933333333',  8000.00, '2023-06-01'),
+(4, 'Cashier Two',   '0944444444',  8000.00, '2023-08-20');

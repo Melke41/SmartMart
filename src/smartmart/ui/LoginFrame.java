@@ -32,51 +32,82 @@ public class LoginFrame extends JFrame {
         this.authService = new AuthService();
 
         // Frame settings
-        setSize(900, 550);
-        setResizable(false);
+        setSize(1000, 620);
+        setResizable(true);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setIconImage(UIHelper.createAppIcon().getImage());
 
-        // Left Panel (40% width) - solid primary color background
+        // Left Panel - solid primary color background
         JPanel leftPanel = new JPanel();
         leftPanel.setBackground(UIConstants.PRIMARY_COLOR);
-        leftPanel.setPreferredSize(new Dimension(360, 550));
+        leftPanel.setMinimumSize(new Dimension(300, 400));
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.setBorder(BorderFactory.createEmptyBorder(40, 30, 40, 30));
 
-        JLabel lblAppName = new JLabel(UIConstants.APP_NAME);
-        lblAppName.setFont(new Font("Segoe UI", Font.BOLD, 38));
+        JLabel lblAppName = new JLabel("SmartMart");
+        lblAppName.setFont(new Font("Segoe UI", Font.BOLD, 42));
         lblAppName.setForeground(Color.WHITE);
         lblAppName.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel lblAppSubtitle = new JLabel("Retail Store Management");
-        lblAppSubtitle.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        lblAppSubtitle.setForeground(new Color(230, 240, 255));
+        JLabel lblAppSubtitle = new JLabel("Retail Store Management System");
+        lblAppSubtitle.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+        lblAppSubtitle.setForeground(new Color(255, 255, 255, 200));
         lblAppSubtitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel lblAppSystem = new JLabel("System");
-        lblAppSystem.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        lblAppSystem.setForeground(new Color(230, 240, 255));
-        lblAppSystem.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel lblTagline = new JLabel("Manage Smarter. Sell Faster.");
+        lblTagline.setFont(new Font("Segoe UI", Font.ITALIC, 14));
+        lblTagline.setForeground(Color.WHITE);
+        lblTagline.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel lblVersion = new JLabel(UIConstants.APP_VERSION);
-        lblVersion.setFont(UIConstants.FONT_SMALL);
-        lblVersion.setForeground(new Color(200, 220, 255));
+        JPanel featuresPanel = new JPanel();
+        featuresPanel.setLayout(new BoxLayout(featuresPanel, BoxLayout.Y_AXIS));
+        featuresPanel.setBackground(UIConstants.PRIMARY_COLOR);
+        featuresPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JLabel lblFeat1 = new JLabel("\u2713  Role-based access control");
+        lblFeat1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        lblFeat1.setForeground(Color.WHITE);
+        lblFeat1.setBorder(BorderFactory.createEmptyBorder(0, 40, 0, 0));
+        
+        JLabel lblFeat2 = new JLabel("\u2713  Real-time inventory tracking");
+        lblFeat2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        lblFeat2.setForeground(Color.WHITE);
+        lblFeat2.setBorder(BorderFactory.createEmptyBorder(0, 40, 0, 0));
+        
+        JLabel lblFeat3 = new JLabel("\u2713  Automated sales reporting");
+        lblFeat3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        lblFeat3.setForeground(Color.WHITE);
+        lblFeat3.setBorder(BorderFactory.createEmptyBorder(0, 40, 0, 0));
+
+        featuresPanel.add(lblFeat1);
+        featuresPanel.add(Box.createRigidArea(new Dimension(0, 8)));
+        featuresPanel.add(lblFeat2);
+        featuresPanel.add(Box.createRigidArea(new Dimension(0, 8)));
+        featuresPanel.add(lblFeat3);
+
+        JLabel lblVersion = new JLabel("v1.0  |  AAU CoSc2051");
+        lblVersion.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+        lblVersion.setForeground(new Color(255, 255, 255, 160));
         lblVersion.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         leftPanel.add(Box.createVerticalGlue());
         leftPanel.add(lblAppName);
         leftPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         leftPanel.add(lblAppSubtitle);
-        leftPanel.add(lblAppSystem);
+        leftPanel.add(Box.createRigidArea(new Dimension(0, 20)));
+        leftPanel.add(lblTagline);
+        leftPanel.add(Box.createRigidArea(new Dimension(0, 30)));
+        leftPanel.add(featuresPanel);
         leftPanel.add(Box.createVerticalGlue());
         leftPanel.add(lblVersion);
 
-        // Right Panel (60% width) - light grey background with card
+        // Right Panel - light grey background with card
         JPanel rightPanel = new JPanel(new GridBagLayout());
         rightPanel.setBackground(UIConstants.BACKGROUND_COLOR);
+        rightPanel.setMinimumSize(new Dimension(400, 400));
 
         // Styled Card
         JPanel cardPanel = UIHelper.createCard();
@@ -156,9 +187,14 @@ public class LoginFrame extends JFrame {
 
         rightPanel.add(cardPanel);
 
-        // Combine left and right panels
-        add(leftPanel, BorderLayout.WEST);
-        add(rightPanel, BorderLayout.CENTER);
+        // Combine left and right panels using JSplitPane
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
+        splitPane.setResizeWeight(0.38); // divider at 38% from left
+        splitPane.setEnabled(false); // non-movable
+        splitPane.setDividerSize(0); // hide handle
+        splitPane.setBorder(null); // remove default split pane border
+
+        add(splitPane, BorderLayout.CENTER);
 
         // Event Handling
         btnLogin.addActionListener(new ActionListener() {
