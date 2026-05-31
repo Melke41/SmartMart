@@ -71,7 +71,7 @@ public class ReceiptDialog extends JDialog {
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         btnPanel.setBackground(Color.WHITE);
 
-        JButton saveBtn = UIHelper.createSecondaryButton("Save Receipt");
+        JButton saveBtn = UIHelper.createSecondaryButton("Print Receipt");
         JButton newSaleBtn = UIHelper.createPrimaryButton("New Sale");
 
         saveBtn.addActionListener(e -> saveReceiptToFile());
