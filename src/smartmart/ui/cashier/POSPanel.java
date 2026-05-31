@@ -365,7 +365,7 @@ public class POSPanel extends JPanel {
 
         } catch (OutOfStockException | InsufficientStockException e) {
             UIHelper.showWarning(this, e.getMessage());
-        } catch (SmartMartException e) {
+        } catch (Exception e) {
             UIHelper.showError(this, e.getMessage());
         }
     }

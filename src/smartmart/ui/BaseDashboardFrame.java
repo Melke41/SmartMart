@@ -52,13 +52,28 @@ public abstract class BaseDashboardFrame extends JFrame {
         lblPageTitle.setForeground(UIConstants.TEXT_PRIMARY);
         headerPanel.add(lblPageTitle, BorderLayout.CENTER);
 
-        // Header Right: User Info + Logout Button
+        // Header Right: User Info + About Button + Logout Button
         JPanel headerRightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 8));
         headerRightPanel.setOpaque(false);
 
         JLabel lblUserInfo = new JLabel(currentUser.getFullName() + " | " + currentUser.getRole().getDisplayName());
         lblUserInfo.setFont(UIConstants.FONT_BODY);
         lblUserInfo.setForeground(UIConstants.TEXT_PRIMARY);
+
+        JButton btnAbout = new JButton("About");
+        btnAbout.setBackground(UIConstants.PRIMARY_COLOR);
+        btnAbout.setForeground(Color.WHITE);
+        btnAbout.setOpaque(true);
+        btnAbout.setContentAreaFilled(true);
+        btnAbout.setBorderPainted(false);
+        btnAbout.setFocusPainted(false);
+        btnAbout.setPreferredSize(new Dimension(90, 30));
+        btnAbout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showAboutDialog();
+            }
+        });
 
         JButton btnLogout = new JButton("Logout");
         btnLogout.setBackground(UIConstants.DANGER_COLOR);
@@ -78,6 +93,7 @@ public abstract class BaseDashboardFrame extends JFrame {
         });
 
         headerRightPanel.add(lblUserInfo);
+        headerRightPanel.add(btnAbout);
         headerRightPanel.add(btnLogout);
         headerPanel.add(headerRightPanel, BorderLayout.EAST);
 
@@ -163,5 +179,57 @@ public abstract class BaseDashboardFrame extends JFrame {
         });
 
         return button;
+    }
+
+    private void showAboutDialog() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel title = new JLabel("SmartMart System");
+        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setForeground(UIConstants.PRIMARY_COLOR);
+        title.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel version = new JLabel("Version: " + UIConstants.APP_VERSION);
+        version.setFont(UIConstants.FONT_BODY);
+        version.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel desc = new JLabel("<html>SmartMart is an all-in-one Retail Store Management System<br>built for tracking products, employees, sales, and restocking.</html>");
+        desc.setFont(UIConstants.FONT_BODY);
+        desc.setBorder(BorderFactory.createEmptyBorder(10, 0, 15, 0));
+        desc.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel teamTitle = new JLabel("Development Team:");
+        teamTitle.setFont(UIConstants.FONT_SUBTITLE);
+        teamTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel team1 = new JLabel("- Melkamu Abyot (Lead Developer)");
+        team1.setFont(UIConstants.FONT_BODY);
+        team1.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel team2 = new JLabel("- Solomon Haile (Database & Backend)");
+        team2.setFont(UIConstants.FONT_BODY);
+        team2.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel team3 = new JLabel("- Dawit Alemu (POS Specialist)");
+        team3.setFont(UIConstants.FONT_BODY);
+        team3.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel team4 = new JLabel("- Yonas Girma (Cashier Operations)");
+        team4.setFont(UIConstants.FONT_BODY);
+        team4.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        panel.add(title);
+        panel.add(version);
+        panel.add(desc);
+        panel.add(teamTitle);
+        panel.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel.add(team1);
+        panel.add(team2);
+        panel.add(team3);
+        panel.add(team4);
+
+        JOptionPane.showMessageDialog(this, panel, "About SmartMart", JOptionPane.INFORMATION_MESSAGE);
     }
 }
