@@ -90,6 +90,14 @@ public class SaleService {
         }
     }
 
+    public List<Sale> getSalesByCashier(int cashierId) throws SmartMartException {
+        try {
+            return saleDAO.getSalesByCashier(cashierId);
+        } catch (SQLException e) {
+            throw new SmartMartException("Database error retrieving sales by cashier: " + e.getMessage(), e);
+        }
+    }
+
     public double getTotalRevenueToday() throws SmartMartException {
         try {
             return saleDAO.getTotalRevenueToday();

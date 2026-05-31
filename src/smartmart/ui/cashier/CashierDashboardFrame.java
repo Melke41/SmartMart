@@ -33,25 +33,33 @@ public class CashierDashboardFrame extends BaseDashboardFrame {
         }
 
         sidebarPanel.add(Box.createVerticalGlue());
+
+        // Add a small stats section at the bottom of sidebar (optional extra details if needed, per step 4)
+        JPanel statsPanel = new JPanel();
+        statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
+        statsPanel.setBackground(UIConstants.PRIMARY_COLOR);
+        statsPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
+
+        JLabel statsLabel = new JLabel("Today's Sales:");
+        statsLabel.setForeground(Color.WHITE);
+        statsLabel.setFont(UIConstants.FONT_BODY.deriveFont(Font.BOLD));
+        statsPanel.add(statsLabel);
+
+        // A placeholder for the actual counts that get updated by events in a real complex app
+        // Currently, it's just visual structure.
+        JLabel countLabel = new JLabel("Check history tab");
+        countLabel.setForeground(new Color(200, 200, 255));
+        countLabel.setFont(UIConstants.FONT_SMALL);
+        statsPanel.add(countLabel);
+
+        sidebarPanel.add(statsPanel);
     }
 
     @Override
     protected void initModules() {
-        String[] modules = {
-            "New Sale", "Transaction History"
-        };
-
-        for (String mod : modules) {
-            JPanel panel = new JPanel(new GridBagLayout());
-            panel.setBackground(Color.WHITE);
-            
-            JLabel lblPlaceholder = new JLabel(mod + " — Coming in Phase 7");
-            lblPlaceholder.setFont(UIConstants.FONT_TITLE);
-            lblPlaceholder.setForeground(UIConstants.TEXT_SECONDARY);
-            
-            panel.add(lblPlaceholder);
-            contentPanel.add(panel, mod);
-        }
+        // Initialize the actual panels instead of placeholders
+        contentPanel.add(new POSPanel(), "New Sale");
+        contentPanel.add(new TransactionHistoryPanel(), "Transaction History");
 
         // Display New Sale module by default
         showModule("New Sale");
