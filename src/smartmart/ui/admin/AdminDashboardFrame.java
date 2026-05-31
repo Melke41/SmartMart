@@ -39,22 +39,23 @@ public class AdminDashboardFrame extends BaseDashboardFrame {
 
     @Override
     protected void initModules() {
-        String[] modules = {
-            "Dashboard", "Products", "Categories", "Suppliers", 
-            "Employees", "Users", "Restock Orders", "Alerts"
-        };
+        contentPanel.add(new AdminOverviewPanel(), "Dashboard");
+        contentPanel.add(new ProductManagementPanel(), "Products");
+        contentPanel.add(new CategoryManagementPanel(), "Categories");
+        contentPanel.add(new SupplierManagementPanel(), "Suppliers");
+        contentPanel.add(new EmployeeManagementPanel(), "Employees");
 
-        for (String mod : modules) {
-            JPanel panel = new JPanel(new GridBagLayout());
-            panel.setBackground(Color.WHITE);
-            
-            JLabel lblPlaceholder = new JLabel(mod + " — Coming in Phase 6");
-            lblPlaceholder.setFont(UIConstants.FONT_TITLE);
-            lblPlaceholder.setForeground(UIConstants.TEXT_SECONDARY);
-            
-            panel.add(lblPlaceholder);
-            contentPanel.add(panel, mod);
-        }
+        // Keep Users as a placeholder
+        JPanel usersPanel = new JPanel(new GridBagLayout());
+        usersPanel.setBackground(Color.WHITE);
+        JLabel lblUsers = new JLabel("User Management — Admin Only");
+        lblUsers.setFont(UIConstants.FONT_TITLE);
+        lblUsers.setForeground(UIConstants.TEXT_SECONDARY);
+        usersPanel.add(lblUsers);
+        contentPanel.add(usersPanel, "Users");
+
+        contentPanel.add(new RestockOrderPanel(), "Restock Orders");
+        contentPanel.add(new AlertsPanel(), "Alerts");
 
         // Display Dashboard module by default
         showModule("Dashboard");
