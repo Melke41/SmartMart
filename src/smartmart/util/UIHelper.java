@@ -244,4 +244,28 @@ public class UIHelper {
 
         return table;
     }
+
+    public static ImageIcon createAppIcon() {
+        try {
+            java.net.URL imgURL = UIHelper.class.getResource("/smartmart/ui/resources/smartmart.png");
+            if (imgURL != null) {
+                return new ImageIcon(imgURL);
+            }
+        } catch (Exception e) {
+            System.err.println("Could not load icon: " + e.getMessage());
+        }
+        
+        // Fallback programmatic icon
+        int size = 64;
+        java.awt.image.BufferedImage img = new java.awt.image.BufferedImage(size, size, java.awt.image.BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = img.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(UIConstants.PRIMARY_COLOR);
+        g2.fillRoundRect(5, 5, 54, 54, 15, 15);
+        g2.setColor(Color.WHITE);
+        g2.setFont(new Font("Arial", Font.BOLD, 28));
+        g2.drawString("S", 22, 43);
+        g2.dispose();
+        return new ImageIcon(img);
+    }
 }

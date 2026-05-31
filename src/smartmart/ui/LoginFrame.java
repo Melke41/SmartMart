@@ -37,6 +37,7 @@ public class LoginFrame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        setIconImage(UIHelper.createAppIcon().getImage());
 
         // Left Panel (40% width) - solid primary color background
         JPanel leftPanel = new JPanel();

@@ -32,6 +32,7 @@ public abstract class BaseDashboardFrame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        setIconImage(UIHelper.createAppIcon().getImage());
 
         // 1. Top Bar (Header) - BACKGROUND_COLOR, height 55px
         JPanel headerPanel = new JPanel(new BorderLayout());
