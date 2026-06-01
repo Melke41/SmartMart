@@ -1,0 +1,35 @@
+═══════════════════════════════════════
+SMARTMART - HOW TO RUN
+═══════════════════════════════════════
+
+REQUIREMENTS:
+- Java 8 or higher (download from https://java.com)
+- Python 3 (only needed for first-time setup)
+
+FIRST TIME SETUP (do this once only):
+1. Open Command Prompt in this folder
+2. Run: python init_db.py
+3. This creates the database file
+
+RUNNING THE APP:
+- Double-click SmartMart.jar
+  OR
+- Open Command Prompt here and run: java -jar SmartMart.jar
+
+LOGIN CREDENTIALS:
+┌─────────────┬──────────────┬─────────────┐
+│ Role        │ Username     │ Password    │
+├─────────────┼──────────────┼─────────────┤
+│ Admin       │ admin        │ admin123    │
+│ Manager     │ manager      │ manager123  │
+│ Cashier     │ cashier1     │ cashier123  │
+└─────────────┴──────────────┴─────────────┘
+
+DEVELOPED BY:
+- Melkamu Abyot (Lead Developer)
+- Samuel Alemayehu (Backend Developer)
+- Mengistu Tark (UI Developer)
+
+Object Oriented Programming — CoSc2051
+Addis Ababa University, 2025
+═══════════════════════════════════════

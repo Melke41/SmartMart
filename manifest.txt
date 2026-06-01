@@ -1,0 +1,2 @@
+Main-Class: smartmart.ui.MainApp
+Class-Path: lib/sqlite-jdbc-3.45.1.0.jar
