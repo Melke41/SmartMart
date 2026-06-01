@@ -1,0 +1,16 @@
+=====================================================================
+                          INVENTORY REPORT                           
+=====================================================================
+ID    | Name                      | Category        | Price      | Stock  | Status  
+---------------------------------------------------------------------
+1     | Coca Cola 500ml           | Beverages       | 25.00      | 119    | OK      
+2     | Ambo Water 1L             | Beverages       | 15.00      | 200    | OK      
+3     | Lega Milk 1L              | Dairy           | 55.00      | 45     | OK      
+4     | Anbesa Biscuit 200g       | Snacks          | 18.00      | 80     | OK      
+5     | Choco Wafer               | Snacks          | 12.00      | 59     | OK      
+6     | Omo Detergent 500g        | Household       | 75.00      | 30     | OK      
+7     | Aqua Soap                 | Personal Care   | 22.00      | 90     | OK      
+8     | Nescafe 50g               | Beverages       | 95.00      | 7      | LOW STOCK
+9     | Excel Tissue              | Household       | 35.00      | 50     | OK      
+10    | Dove Shampoo 200ml        | Personal Care   | 145.00     | 25     | OK      
+=====================================================================

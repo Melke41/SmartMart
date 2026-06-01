@@ -1,13 +1,13 @@
 ================================
-Receipt No: REC-0003
-Date & Time: 2026-05-31 22:39:58
+Receipt No: REC-0002
+Date & Time: 2026-05-31 15:55:57
 Cashier: Mengistu Tark
 ================================
-Nescafe 50g       1 x 95.00   95.00
+Coca Cola 500ml   1 x 25.00   25.00
 ================================
-Subtotal:                  95.00
-Tax (15%):                 14.25
-TOTAL:                    109.25
+Subtotal:                  25.00
+Tax (15%):                  3.75
+TOTAL:                     28.75
 ================================
   Thank you for shopping at     
           SmartMart!            

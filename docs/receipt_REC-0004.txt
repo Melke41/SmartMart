@@ -1,0 +1,14 @@
+================================
+Receipt No: REC-0004
+Date & Time: 2026-06-01 09:31:28
+Cashier: Mengistu Tark
+================================
+Coca Cola 500ml   1 x 25.00   25.00
+Ambo Water 1L     1 x 15.00   15.00
+================================
+Subtotal:                  40.00
+Tax (15%):                  6.00
+TOTAL:                     46.00
+================================
+  Thank you for shopping at     
+          SmartMart!            

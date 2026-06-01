@@ -1,0 +1,15 @@
+================================
+Receipt No: REC-0005
+Date & Time: 2026-06-01 12:28:53
+Cashier: Mengistu Tark
+================================
+Coca Cola 500ml   1 x 25.00   25.00
+Lega Milk 1L      1 x 55.00   55.00
+Choco Wafer       1 x 12.00   12.00
+================================
+Subtotal:                  92.00
+Tax (15%):                 13.80
+TOTAL:                    105.80
+================================
+  Thank you for shopping at     
+          SmartMart!            
