@@ -33,7 +33,6 @@ Name: "{commondesktop}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Paramete
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional icons:"
 
 [Run]
-Filename: "python"; Parameters: "{app}\database\init_db.py"; Description: "Initialize database"; Flags: runhidden waituntilterminated
 Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; Description: "Launch SmartMart"; Flags: nowait postinstall skipifsilent
 
 [Code]
