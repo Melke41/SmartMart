@@ -26,6 +26,20 @@
 
 ---
 
+## 🚀 Quick Start
+
+**Choose your preferred installation method:**
+
+| Method | Best For | Steps |
+|--------|----------|-------|
+| **Installer** (SmartMart_Setup.exe) | Windows users who want one-click setup | 1. Download from [Releases](https://github.com/Melke41/SmartMart/releases)<br>2. Double-click the `.exe` file<br>3. Launch SmartMart |
+| **Pre-built JAR** (SmartMart.jar) | Cross-platform users with Java installed | 1. Download from [Releases](https://github.com/Melke41/SmartMart/releases)<br>2. Run: `java -jar SmartMart.jar`<br>3. Login |
+| **Build from Source** | Developers who want to modify code | 1. Clone repo: `git clone https://github.com/Melke41/SmartMart.git`<br>2. Open in IDE (IntelliJ, Eclipse, VS Code)<br>3. Run `MainApp.java` |
+
+👉 **[See detailed setup guide →](SETUP_GUIDE.md)** for complete instructions, troubleshooting, and login credentials.
+
+---
+
 ## 🎯 Project Overview
 
 SmartMart is a three-role retail management desktop application that simulates real-world store operations:
