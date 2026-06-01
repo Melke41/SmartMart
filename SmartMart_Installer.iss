@@ -23,27 +23,21 @@ Source: "database\seed.sql"; DestDir: "{app}\database"; Flags: ignoreversion
 Source: "database\init_db.py"; DestDir: "{app}\database"; Flags: ignoreversion
 Source: "release\HOW_TO_RUN.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "docs\smartmart.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "jre\*"; DestDir: "{app}\jre"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{group}\SmartMart"; Filename: "{app}\SmartMart.jar"; IconFilename: "{app}\smartmart.ico"
-Name: "{commondesktop}\SmartMart"; Filename: "{app}\SmartMart.jar"; IconFilename: "{app}\smartmart.ico"; Tasks: desktopicon
+Name: "{group}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; IconFilename: "{app}\smartmart.ico"
+Name: "{commondesktop}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; IconFilename: "{app}\smartmart.ico"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional icons:"
 
 [Run]
 Filename: "python"; Parameters: "{app}\database\init_db.py"; Description: "Initialize database"; Flags: runhidden waituntilterminated
-Filename: "{app}\SmartMart.jar"; Description: "Launch SmartMart"; Flags: nowait postinstall skipifsilent shellexec
+Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; Description: "Launch SmartMart"; Flags: nowait postinstall skipifsilent
 
 [Code]
 function InitializeSetup(): Boolean;
-var
-  JavaPath: String;
 begin
-  if not RegQueryStringValue(HKLM, 'SOFTWARE\JavaSoft\Java Runtime Environment', 'CurrentVersion', JavaPath) then
-  begin
-    MsgBox('Java is not installed. Please install Java 8 or higher from https://java.com before installing SmartMart.', mbError, MB_OK);
-    Result := False;
-  end else
-    Result := True;
+  Result := True;
 end;
