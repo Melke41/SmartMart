@@ -1,0 +1,14 @@
+================================
+Receipt No: REC-0001
+Date & Time: 2026-06-01 14:29:17
+Cashier: Mengistu Tark
+================================
+Coca Cola 500ml   1 x 25.00   25.00
+Aqua Soap         1 x 22.00   22.00
+================================
+Subtotal:                  47.00
+Tax (15%):                  7.05
+TOTAL:                     54.05
+================================
+  Thank you for shopping at     
+          SmartMart!            

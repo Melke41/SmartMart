@@ -17,13 +17,12 @@ UninstallDisplayIcon={app}\SmartMart.jar
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "SmartMart.jar"; DestDir: "{app}"; Flags: ignoreversion
 Source: "database\schema.sql"; DestDir: "{app}\database"; Flags: ignoreversion
 Source: "database\seed.sql"; DestDir: "{app}\database"; Flags: ignoreversion
-Source: "database\init_db.py"; DestDir: "{app}\database"; Flags: ignoreversion
-Source: "release\HOW_TO_RUN.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "docs\smartmart.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "SmartMart.jar"; DestDir: "{app}"; Flags: ignoreversion
 Source: "jre\*"; DestDir: "{app}\jre"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "docs\smartmart.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "release\HOW_TO_RUN.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; IconFilename: "{app}\smartmart.ico"
