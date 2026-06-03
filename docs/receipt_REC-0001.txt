@@ -1,14 +1,14 @@
 ================================
 Receipt No: REC-0001
-Date & Time: 2026-06-01 14:29:17
+Date & Time: 2026-06-03 12:51:55
 Cashier: Mengistu Tark
 ================================
 Coca Cola 500ml   1 x 25.00   25.00
-Aqua Soap         1 x 22.00   22.00
+Ambo Water 1L     1 x 15.00   15.00
 ================================
-Subtotal:                  47.00
-Tax (15%):                  7.05
-TOTAL:                     54.05
+Subtotal:                  40.00
+Tax (15%):                  6.00
+TOTAL:                     46.00
 ================================
   Thank you for shopping at     
           SmartMart!            

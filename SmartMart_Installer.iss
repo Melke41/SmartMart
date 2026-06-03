@@ -16,23 +16,26 @@ UninstallDisplayIcon={app}\SmartMart.jar
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
+[Dirs]
+Name: "{app}\database"; Permissions: users-modify
+
 [Files]
+Source: "SmartMart.jar"; DestDir: "{app}"; Flags: ignoreversion
 Source: "database\schema.sql"; DestDir: "{app}\database"; Flags: ignoreversion
 Source: "database\seed.sql"; DestDir: "{app}\database"; Flags: ignoreversion
-Source: "SmartMart.jar"; DestDir: "{app}"; Flags: ignoreversion
 Source: "jre\*"; DestDir: "{app}\jre"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "docs\smartmart.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "release\HOW_TO_RUN.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; IconFilename: "{app}\smartmart.ico"
-Name: "{commondesktop}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; IconFilename: "{app}\smartmart.ico"; Tasks: desktopicon
+Name: "{group}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar SmartMart.jar"; WorkingDir: "{app}"; IconFilename: "{app}\smartmart.ico"
+Name: "{commondesktop}\SmartMart"; Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar SmartMart.jar"; WorkingDir: "{app}"; IconFilename: "{app}\smartmart.ico"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional icons:"
 
 [Run]
-Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar ""{app}\SmartMart.jar"""; Description: "Launch SmartMart"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\jre\bin\javaw.exe"; Parameters: "-jar SmartMart.jar"; WorkingDir: "{app}"; Description: "Launch SmartMart now"; Flags: nowait postinstall skipifsilent
 
 [Code]
 function InitializeSetup(): Boolean;
