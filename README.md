@@ -188,7 +188,7 @@ java -cp "out;lib/sqlite-jdbc-3.45.1.0.jar" smartmart.ui.MainApp
 | 1 | Melkamu Abyot | Lead Developer |
 | 2 | Samuel Alemayehu | Backend Developer |
 | 3 | Mengistu Tark | UI Developer |
-
+| 4 | Raji Tesfaye  | Frontend Developer |
 ---
 
 ## 📚 Course Information
