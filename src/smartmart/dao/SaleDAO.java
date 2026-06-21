@@ -34,7 +34,13 @@ public class SaleDAO {
             psSale = conn.prepareStatement(sqlSale, PreparedStatement.RETURN_GENERATED_KEYS);
             psSale.setInt(1, sale.getCashier() != null ? sale.getCashier().getUserId() : 0);
             psSale.setDouble(2, sale.getTotalAmount());
-            psSale.setString(3, sale.getSaleDate() != null ? sale.getSaleDate() : "datetime('now')");
+            // Fall back to the current timestamp (a real value, not the literal
+            // text "datetime('now')") when no sale date was set.
+            String saleDate = sale.getSaleDate();
+            if (saleDate == null) {
+                saleDate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
+            }
+            psSale.setString(3, saleDate);
 
             int affected = psSale.executeUpdate();
             if (affected == 0) {
